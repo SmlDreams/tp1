@@ -5,6 +5,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public float speed = 0;
+    public GameObject PausePanel;
+
     void FixedUpdate()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -17,10 +19,10 @@ public class Movement : MonoBehaviour
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collision détectée avec : " + collision.gameObject.name);
-
-        // Vous pouvez ajouter ici le code que vous souhaitez exécuter lors de la collision
+        PausePanel.SetActive(true);
+        Time.timeScale = 0;
     }
 }
