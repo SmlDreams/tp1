@@ -16,4 +16,11 @@ public class Movement : MonoBehaviour
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collision détectée avec : " + collision.gameObject.name);
+
+        // Vous pouvez ajouter ici le code que vous souhaitez exécuter lors de la collision
+    }
 }
