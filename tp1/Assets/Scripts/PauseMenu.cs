@@ -27,4 +27,10 @@ public class PauseMenu : MonoBehaviour
     {
         SceneManager.LoadScene("MainHUD");
     }
+
+    public void Rejouer()
+    {
+        SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 1 ;
+    } 
 }

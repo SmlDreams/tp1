@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
     public float speed = 0;
     public GameObject PausePanel;
 
-    void FixedUpdate()
+    void Update()
     {
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
